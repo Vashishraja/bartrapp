@@ -1,9 +1,7 @@
-import 'package:bartrapp/screens/merchant/auth/otp_verification_page.dart';
-import 'package:bartrapp/screens/merchant/home_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:lottie/lottie.dart';
 
-class MerchantLoginPage extends StatelessWidget {
+class CustomerLoginPage extends StatelessWidget {
   final TextEditingController phoneController = TextEditingController();
 
   @override
@@ -30,7 +28,7 @@ class MerchantLoginPage extends StatelessWidget {
                 // Lottie Animation
                 SizedBox(
                   height: 200,
-                  child: Lottie.asset('assets/merchant.json'),
+                  child: Lottie.asset('assets/customer.json'),
                 ),
                 SizedBox(height: 20),
                 // Title
@@ -108,6 +106,7 @@ class MerchantLoginPage extends StatelessWidget {
                   width: MediaQuery.of(context).size.width * 0.7,
                   child: ElevatedButton(
                     onPressed: () {
+                      // Validate phone number
                       String phoneNumber = phoneController.text.trim();
                       if (phoneNumber.isEmpty || phoneNumber.length < 10) {
                         ScaffoldMessenger.of(context).showSnackBar(
@@ -116,11 +115,7 @@ class MerchantLoginPage extends StatelessWidget {
                             Text('Please enter a valid 10-digit phone number'),
                           ),
                         );
-
                         return;
-                      }
-                      else{
-                        Navigator.of(context).push(MaterialPageRoute(builder: (context)=>OTPPage()));
                       }
                     },
                     style: ElevatedButton.styleFrom(

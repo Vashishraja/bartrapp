@@ -1,4 +1,6 @@
+import 'package:bartrapp/screens/customer/auth/login_screen.dart';
 import 'package:flutter/material.dart';
+import 'package:lottie/lottie.dart';
 
 import 'merchant/auth/login_screen.dart';
 
@@ -6,14 +8,17 @@ class GetStartedPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.white,
+      appBar: AppBar(
+        backgroundColor: Colors.lightBlue,
+        title: Center(child: Text('Bartr',style: TextStyle(color: Colors.white),)),
+      ),
+      backgroundColor: Colors.lightBlue,
       body: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          CircleAvatar(
-            radius: 70,
-            backgroundColor: Colors.indigo.shade800,
-
+          SizedBox(
+            height: 200,
+            child: Lottie.asset('assets/start.json'),
           ),
           SizedBox(height: 35,),
           Padding(
@@ -23,7 +28,7 @@ class GetStartedPage extends StatelessWidget {
               style: TextStyle(
                 fontSize: 28,
                 fontWeight: FontWeight.bold,
-                color: Colors.indigo,
+                color: Colors.white,
               ),
               textAlign: TextAlign.center,
             ),
@@ -36,7 +41,7 @@ class GetStartedPage extends StatelessWidget {
               'Welcome to bartr Club',
               style: TextStyle(
                 fontSize: 18,
-                color: Colors.lightBlue[700],
+                color: Colors.white,
               ),
               textAlign: TextAlign.center,
             ),
@@ -51,7 +56,7 @@ class GetStartedPage extends StatelessWidget {
                   onPressed: () {
                     Navigator.of(context).push(MaterialPageRoute(builder: (context)=>MerchantLoginPage()));                 },
                   style: ElevatedButton.styleFrom(
-                    backgroundColor: Colors.lightBlue, // Button color
+                    backgroundColor: Colors.indigo.shade800, // Button color
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(20),
                     ),
@@ -69,10 +74,10 @@ class GetStartedPage extends StatelessWidget {
                 SizedBox(height: 20),
                 ElevatedButton(
                   onPressed: () {
-                    // Navigate to Customer Login
+                  Navigator.of(context).push(MaterialPageRoute(builder: (context)=>CustomerLoginPage()));
                   },
                   style: ElevatedButton.styleFrom(
-                    backgroundColor: Colors.indigo.shade600, // Button color
+                    backgroundColor: Colors.indigo.shade800, // Button color
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(20),
                     ),
