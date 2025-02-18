@@ -13,7 +13,7 @@ class TradePage extends StatelessWidget {
       businessName: "XYZ Clothing",
       points: 150,
       requirement: "Buy 2 items & get 150 points",
-      merchantLogo: 'assets/merchant2.png',
+      merchantLogo:  'assets/merchant2.png',
     ),
     TradeOffer(
       businessName: "PQR Grocery",
